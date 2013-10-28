@@ -20,6 +20,12 @@ function main(){
     for( a = 0; a < styles.length; a++ ) {
         if( styles[a].name.match( /^[0-9]H/ ) ) {
             var new_style = styles[a].name = styles[a].name.replace( /^([0-9])H/, 'H$1' );
+        } else if ( !styles[a].name.match( /^\[/ ) ) {
+            // piggyback style
+            styles[a].name = styles[a].name.replace( /.*_CHAPTERHEAD/, 'CT' ).replace( /[^a-zA-Z\s0-9_-]/, "-" );
+            styles[a].name = styles[a].name.replace( /.*_SECTION/, 'H1' ).replace( /[^a-zA-Z\s0-9_-]/, "-" );
+            styles[a].name = styles[a].name.replace( /.*_SUBSECTION/, 'H2' ).replace( /[^a-zA-Z\s0-9_-]/, "-" );
+            styles[a].name = styles[a].name.replace( /.*HEAD/, 'H3 ' ).replace( /[^a-zA-Z\s0-9_-]/, "-" );
         }
     }
 }
