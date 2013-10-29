@@ -22,7 +22,7 @@ function main() {
                         (t.parent instanceof Character) &&
                         t.anchoredObjectSettings.anchoredPosition == AnchorPosition.INLINE_POSITION
                     ) {
-                        t.select(SelectionOptions.ADD_TO);
+                        t.select();
                         return;
                     }
                 }
