@@ -13,11 +13,13 @@ function replaceTextByFont( dafont ) {
     converted = 0;
     failed = 0;
     for( i = 0; i < chars.length; i ++ ) {
-        try {
-          chars[i].createOutlines(true);
-          converted += 1;
-        } catch( e ) {
-            failed += 1;
+        if( chars[i] instanceof Character ) {
+            try {
+              chars[i].createOutlines(true);
+              converted += 1;
+            } catch( e ) {
+                failed += 1;
+            }
         }
         //chars[i]
     }
