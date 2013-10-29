@@ -10,9 +10,17 @@ function replaceTextByFont( dafont ) {
     app.findTextPreferences.appliedFont = app.fonts.item(dafont);
     app.changeTextPreferences.appliedFont = app.fonts.item("Arial");
     chars = app.activeDocument.findText();
+    converted = 0;
+    failed = 0;
     for( i = 0; i < chars.length; i ++ ) {
-        chars[i].createOutlines(true);
+        try {
+          chars[i].createOutlines(true);
+          converted += 1;
+        } catch( e ) {
+            failed += 1;
+        }
         //chars[i]
     }
     chars = app.activeDocument.changeText();
+    alert( "Converted " + converted + " of font '" + dafont + "' (for some reason,  " + failed + " conversions failed)");
 }
