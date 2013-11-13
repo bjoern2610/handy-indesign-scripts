@@ -473,7 +473,7 @@ function runDialog()
 	omd.separator();
 	omd.checkbox("Ignore locked layers", "ignorelocked", defaultIgnoreLocked , "(applies to pages)");
 	omd.separator();
-	omd.radioButtons("Sort by","sort","left",["top","left","bottom","right"]);
+	omd.radioButtons("Sort by","sort","top",["top","left","bottom","right"]);
 	omd.separator();
 	omd.string("Separator","separator","\\n");
 	omd.boxedText(3,"\\r = hard return, \\n = soft return, \\t = tab \n\nUse hard return(s) if you want to preserve paragraphs styles");
