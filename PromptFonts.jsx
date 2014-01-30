@@ -1,31 +1,10 @@
-﻿app.doScript( main, undefined, undefined, UndoModes.FAST_ENTIRE_SCRIPT );
-function main() {
-    //replaceTextByFont( "Martin");
-    //replaceTextByFont( "XBOX-360");
-    //replaceTextByFont( "PrimaDingbatsWii");
-    replaceTextByFont( get_font() );
-}
+﻿//DESCRIPTION: List missing glyphs or apply selected font to missing glyphs.
+// Peter Kahrel -- www.kahrel.plus.com
+// Based on Pete Baumgartner's method, see http://forums.adobe.com/thread/1037284?tstart=0
 
-function replaceTextByFont( dafont ) {
-    app.findTextPreferences = app.changeTextPreferences = NothingEnum.nothing;
-    app.findTextPreferences.appliedFont = app.fonts.item(dafont);
-    app.changeTextPreferences.appliedFont = app.fonts.item("Arial");
-    chars = app.activeDocument.findText();
-    converted = 0;
-    failed = 0;
-    for( i = 0; i < chars.length; i ++ ) {
-        if( chars[i] instanceof Character ) {
-            try {
-              chars[i].createOutlines(true);
-              converted += 1;
-            } catch( e ) {
-                failed += 1;
-            }
-        }
-        //chars[i]
-    }
-    chars = app.activeDocument.changeText();
-    alert( "Converted " + converted + " of font '" + dafont + "' (for some reason,  " + failed + " conversions failed, but you don't worry, these were probably <space> characters)");
+main();
+function main() {
+    alert( get_data() );
 }
 
 function get_font()

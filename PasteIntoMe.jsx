@@ -5,7 +5,7 @@
 */
 // Groups a selection, cuts it, creates a frame, pastes group into frame, then autosizes frame.
 //
-main();
+app.doScript( main, undefined, undefined, UndoModes.FAST_ENTIRE_SCRIPT );
 function main() {
     var myObj = new Array;
     myObj = app.selection;

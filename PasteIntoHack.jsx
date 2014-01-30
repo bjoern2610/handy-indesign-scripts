@@ -5,7 +5,7 @@
 */
 // Groups a selection, cuts it, creates a frame, pastes group into frame, then autosizes frame.
 //
-main();
+app.doScript( main, undefined, undefined, UndoModes.FAST_ENTIRE_SCRIPT );
 function main() {
     var myObj = new Array;
     myObj = app.selection;
@@ -21,7 +21,8 @@ function main() {
     r = app.activeWindow.activePage.rectangles.add({geometricBounds:bounds});
     r.select();
     app.pasteInto();
-    r.fit(FitOptions.frameToContent);
+    //r.fit(FitOptions.frameToContent);
+    r.sendToBack();
 }
 
 function myGetBounds(myDocument, myPage){

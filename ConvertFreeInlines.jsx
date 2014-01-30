@@ -4,7 +4,7 @@
 */
 // Select an image, then this will delete all other links of same image
 //
-main();
+app.doScript( main, undefined, undefined, UndoModes.FAST_ENTIRE_SCRIPT );
 function main() {
     //stories = app.selection;
     app.activeDocument.select(NothingEnum.NOTHING);

@@ -1,10 +1,5 @@
-﻿//PasteIntoHack.jsx
-/*  
-@@@BUILDINFO@@@ "DeleteAllInstancesOfLink.jsx" 1.0.0 21 October 2013
-*/
-// Select an image, then this will delete all other links of same image
-//
-main();
+﻿
+app.doScript( main, undefined, undefined, UndoModes.FAST_ENTIRE_SCRIPT );
 function main() {
     var sel = app.selection;
     items = app.activeWindow.activeSpread.allPageItems;

@@ -13,7 +13,7 @@
 //For more information on InDesign scripting, go to http://www.adobe.com/products/indesign/scripting/index.html
 //Or visit the InDesign Scripting User to User forum at http://www.adobeforums.com.
 //
-main();
+app.doScript( main, undefined, undefined, UndoModes.FAST_ENTIRE_SCRIPT );
 function main(){
 	//Make certain that user interaction (display of dialogs, etc.) is turned on.
 	app.scriptPreferences.userInteractionLevel = UserInteractionLevels.interactWithAll;
